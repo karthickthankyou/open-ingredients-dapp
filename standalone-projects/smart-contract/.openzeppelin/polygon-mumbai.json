@@ -1,0 +1,170 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x606E79B500d957591c39F968C2A1eCDEef5A0dc6",
+    "txHash": "0x5fa380d4ed9902bfef1359f19d874af98832bf48e171d6096aea3f2616e067ba"
+  },
+  "proxies": [
+    {
+      "address": "0x44C08B595FCF57d5f502334bD9189a2752Ab6063",
+      "txHash": "0x42cb599ce0dcfcf4fe856c738f9679a2bf7ca841cf717cbf77172ed10abef954",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "139f41551df1a1e4bcb41f6d15a869137088e141c40f3bee3fa5bb58938dfb13": {
+      "address": "0xE0fE3D7064aF3a19c2fcc69F503f2e4CF85f1466",
+      "txHash": "0xa92aa495d1c35cd1ebd8119a65a1194a140e74a1d3d47d0ddc9f8a9e601eb59c",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "contractOwner",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address_payable",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:6"
+          },
+          {
+            "label": "productCount",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:7"
+          },
+          {
+            "label": "products",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_uint256,t_struct(Product)538_storage)",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:28"
+          },
+          {
+            "label": "productIngredients",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_uint256,t_array(t_uint256)dyn_storage)",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:30"
+          },
+          {
+            "label": "userProducts",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:31"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_address_payable": {
+            "label": "address payable",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_uint256))": {
+            "label": "mapping(address => mapping(uint256 => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_array(t_uint256)dyn_storage)": {
+            "label": "mapping(uint256 => uint256[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Product)538_storage)": {
+            "label": "mapping(uint256 => struct OpenIngredients.Product)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Product)538_storage": {
+            "label": "struct OpenIngredients.Product",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "owner",
+                "type": "t_address_payable",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "notes",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "quantity",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "price",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}
