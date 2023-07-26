@@ -25,13 +25,13 @@ contract OpenIngredients is Initializable {
         uint quantity;
     }
 
+    event ProductCreated(uint productId, string name, string notes, uint price);
+    event ProductPurchased(uint productId, uint quantity, address buyer);
+
     mapping(uint => Product) public products;
 
     mapping(uint => uint[]) public productIngredients;
     mapping(address => mapping(uint => uint)) public userProducts;
-
-    event ProductCreated();
-    event ProductPurchased();
 
     function createProduct(
         string memory _name,
@@ -62,6 +62,8 @@ contract OpenIngredients is Initializable {
         for (uint i = 0; i < _ingredients.length; i++) {
             productIngredients[productCount].push(_ingredients[i].id);
         }
+
+        emit ProductCreated(productCount, _name, _notes, _price);
     }
 
     function purchaseProduct(uint _productId, uint _quantity) public payable {
@@ -81,5 +83,7 @@ contract OpenIngredients is Initializable {
 
         _product.quantity -= _quantity;
         userProducts[msg.sender][_productId] += _quantity;
+
+        emit ProductPurchased(_productId, _quantity, msg.sender);
     }
 }

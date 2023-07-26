@@ -9,6 +9,11 @@
       "address": "0x44C08B595FCF57d5f502334bD9189a2752Ab6063",
       "txHash": "0x42cb599ce0dcfcf4fe856c738f9679a2bf7ca841cf717cbf77172ed10abef954",
       "kind": "transparent"
+    },
+    {
+      "address": "0x0e89B3D6CFCBdd9797d888aaEf1a44Be9F4Dcb3b",
+      "txHash": "0x833b7a70e95199958269d7e2f984348464e9b839c8e7270e1e30d261b30e361e",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -74,6 +79,160 @@
             "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
             "contract": "OpenIngredients",
             "src": "contracts/OpenIngredients.sol:31"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_address_payable": {
+            "label": "address payable",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_uint256))": {
+            "label": "mapping(address => mapping(uint256 => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_array(t_uint256)dyn_storage)": {
+            "label": "mapping(uint256 => uint256[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Product)538_storage)": {
+            "label": "mapping(uint256 => struct OpenIngredients.Product)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Product)538_storage": {
+            "label": "struct OpenIngredients.Product",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "owner",
+                "type": "t_address_payable",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "notes",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "quantity",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "price",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "3f5e9e79df97c4573f42ec3d2a71c8395ba8e5d4ac3a476f444be7cd98b153d6": {
+      "address": "0x098f75A0D68063083a9050570bF146E7bDd663e1",
+      "txHash": "0x6f4c13268281d8df46d9841b009547d93d60bcb2c4ba6aed866678e8a812d69f",
+      "layout": {
+        "solcVersion": "0.8.18",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "contractOwner",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address_payable",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:6"
+          },
+          {
+            "label": "productCount",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:7"
+          },
+          {
+            "label": "products",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_uint256,t_struct(Product)538_storage)",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:31"
+          },
+          {
+            "label": "productIngredients",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_uint256,t_array(t_uint256)dyn_storage)",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:33"
+          },
+          {
+            "label": "userProducts",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
+            "contract": "OpenIngredients",
+            "src": "contracts/OpenIngredients.sol:34"
           }
         ],
         "types": {

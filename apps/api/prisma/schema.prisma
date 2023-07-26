@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id          Int           @id @default(autoincrement())
+    address     String        @unique
+    products    Product[]
+    Transaction Transaction[]
+}
+
+model Product {
+    id           Int           @id @default(autoincrement())
+    owner        User          @relation(fields: [ownerId], references: [id])
+    ownerId      Int
+    name         String
+    notes        String?
+    images       String[]
+    quantity     Int
+    price        Float
+    ingredients  Ingredient[]
+    transactions Transaction[]
+}
+
+model Ingredient {
+    id        Int     @id @default(autoincrement())
+    product   Product @relation(fields: [productId], references: [id])
+    productId Int
+    quantity  Int
+}
+
+model Transaction {
+    id         Int     @id @default(autoincrement())
+    buyer      User    @relation(fields: [buyerId], references: [id])
+    buyerId    Int
+    product    Product @relation(fields: [productId], references: [id])
+    productId  Int
+    quantity   Int
+    totalPrice Float
+}
+
+// 1. Units with quantity.
+// 2. Add verifiers.
+// 3. Add forSale and salePrice? Because the user can be buying to consume.
+// 4. Add to existing product!
+// 5. Contains other ingredients.
